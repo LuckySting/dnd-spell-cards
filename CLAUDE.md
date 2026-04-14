@@ -22,7 +22,11 @@ Printable D&D 5e spell cards — a single-page static HTML app (`spells.html`) w
 - Font sizes use `clamp()` for responsive scaling between screen and print
 - Class filtering is done client-side by toggling `.hidden` on card elements
 
-## Spell Image Styles
+## Spell Image Generation
+
+Use the `/generate-image` skill to create spell illustrations. Generate at `1792x1024` (landscape) to match the card's image area aspect ratio. Save output to `img/` with snake_case names (e.g. `img/divine_smite.png`), then set the `img` property on the spell object.
+
+### Art Styles by Class
 
 All spell illustrations share a base style: traditional oil painting, gritty textured brushstrokes, aged weathered look, classic fantasy book illustration, painterly and rough — not clean or digital.
 
