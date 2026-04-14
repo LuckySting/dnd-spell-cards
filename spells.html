@@ -127,11 +127,14 @@
   }
 
   .spell-image {
-    margin-top: 8px;
+    position: absolute;
+    top: 40px;
+    left: 8px;
     width: 235px;
-    height: 146px;
+    height: 154px;
     background-size: cover;
     background-position: center;
+    z-index: 0;
   }
 
   /* Bottom area: all text on the parchment */
@@ -243,62 +246,8 @@ const spells = [
     components: "V",
     duration: "Instantaneous",
     cls: "paladin",
+    img: "img/divine_smite.png",
     desc: "<p>When you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level slot, plus 1d8 for each slot level higher than 1st, to a maximum of 5d8.</p><p>The damage increases by 1d8 if the target is an undead or a fiend.</p>"
-  },
-  {
-    name: "Shield of Faith",
-    level: "1st-level",
-    school: "Abjuration",
-    castTime: "1 bonus action",
-    range: "60 feet",
-    components: "V, S, M (parchment with a holy word)",
-    duration: "Concentration, up to 10 min",
-    cls: "paladin",
-    desc: "<p>A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.</p>"
-  },
-  {
-    name: "Lay on Hands",
-    level: "1st-level",
-    school: "Evocation",
-    castTime: "1 action",
-    range: "Touch",
-    components: "V, S",
-    duration: "Instantaneous",
-    cls: "paladin",
-    desc: "<p>Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you take a long rest. With that pool, you can restore a total number of hit points equal to your paladin level x 5.</p><p>You can also expend 5 HP from the pool to cure one disease or neutralize one poison.</p>"
-  },
-  {
-    name: "Bless",
-    level: "1st-level",
-    school: "Enchantment",
-    castTime: "1 action",
-    range: "30 feet",
-    components: "V, S, M (holy water)",
-    duration: "Concentration, up to 1 min",
-    cls: "paladin",
-    desc: "<p>You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw.</p>"
-  },
-  {
-    name: "Thunderous Smite",
-    level: "1st-level",
-    school: "Evocation",
-    castTime: "1 bonus action",
-    range: "Self",
-    components: "V",
-    duration: "Concentration, up to 1 min",
-    cls: "paladin",
-    desc: "<p>The first time you hit with a melee weapon attack during this spell's duration, your weapon rings with thunder that is audible within 300 feet, and the attack deals an extra 2d6 thunder damage to the target.</p><p>The target must succeed on a STR save or be pushed 10 feet away and knocked prone.</p>"
-  },
-  {
-    name: "Wrathful Smite",
-    level: "1st-level",
-    school: "Evocation",
-    castTime: "1 bonus action",
-    range: "Self",
-    components: "V",
-    duration: "Concentration, up to 1 min",
-    cls: "paladin",
-    desc: "<p>The next time you hit with a melee weapon attack during this spell's duration, your attack deals an extra 1d6 psychic damage. If the target is a creature, it must make a WIS saving throw or be frightened of you until the spell ends.</p><p>The creature can repeat the save at the end of each of its turns.</p>"
   },
 
   // --- Warlock ---
@@ -313,61 +262,6 @@ const spells = [
     cls: "warlock",
     desc: "<p>A beam of crackling energy streaks toward a creature within range. Make a ranged spell attack. On a hit, the target takes 1d10 force damage.</p><p>The spell creates more beams at higher levels: two at 5th, three at 11th, and four at 17th level.</p>"
   },
-  {
-    name: "Hex",
-    level: "1st-level",
-    school: "Enchantment",
-    castTime: "1 bonus action",
-    range: "90 feet",
-    components: "V, S, M (petrified eye of a newt)",
-    duration: "Concentration, up to 1 hour",
-    cls: "warlock",
-    desc: "<p>You place a curse on a creature that you can see within range. Until the spell ends, you deal an extra 1d6 necrotic damage to the target whenever you hit it with an attack. Choose one ability; the target has disadvantage on ability checks made with the chosen ability.</p><p>If the target drops to 0 HP, you can use a bonus action to transfer the curse to a new creature.</p>"
-  },
-  {
-    name: "Armor of Agathys",
-    level: "1st-level",
-    school: "Abjuration",
-    castTime: "1 action",
-    range: "Self",
-    components: "V, S, M (a cup of water)",
-    duration: "1 hour",
-    cls: "warlock",
-    desc: "<p>A protective magical force surrounds you, manifesting as a spectral frost that covers you and your gear. You gain 5 temporary hit points for the duration.</p><p>If a creature hits you with a melee attack while you have these temporary HP, the creature takes 5 cold damage.</p>"
-  },
-  {
-    name: "Hellish Rebuke",
-    level: "1st-level",
-    school: "Evocation",
-    castTime: "1 reaction",
-    range: "60 feet",
-    components: "V, S",
-    duration: "Instantaneous",
-    cls: "warlock",
-    desc: "<p>You point your finger, and the creature that damaged you is momentarily surrounded by hellish flames. The creature must make a DEX saving throw. It takes 2d10 fire damage on a failed save, or half as much on a successful one.</p>"
-  },
-  {
-    name: "Darkness",
-    level: "2nd-level",
-    school: "Evocation",
-    castTime: "1 action",
-    range: "60 feet",
-    components: "V, M (bat fur and a drop of pitch)",
-    duration: "Concentration, up to 10 min",
-    cls: "warlock",
-    desc: "<p>Magical darkness spreads from a point you choose within range to fill a 15-foot-radius sphere for the duration. Darkvision can't see through it. Nonmagical light can't illuminate it.</p><p>If the point is on an object you're holding or one that isn't worn or carried, the darkness emanates from and moves with the object.</p>"
-  },
-  {
-    name: "Misty Step",
-    level: "2nd-level",
-    school: "Conjuration",
-    castTime: "1 bonus action",
-    range: "Self",
-    components: "V",
-    duration: "Instantaneous",
-    cls: "warlock",
-    desc: "<p>Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space that you can see.</p>"
-  },
 
   // --- Wizard ---
   {
@@ -380,61 +274,6 @@ const spells = [
     duration: "Instantaneous",
     cls: "wizard",
     desc: "<p>A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere must make a DEX saving throw. A target takes 8d6 fire damage on a failed save, or half as much on a successful one.</p><p>The fire spreads around corners and ignites flammable objects that aren't being worn or carried.</p>"
-  },
-  {
-    name: "Magic Missile",
-    level: "1st-level",
-    school: "Evocation",
-    castTime: "1 action",
-    range: "120 feet",
-    components: "V, S",
-    duration: "Instantaneous",
-    cls: "wizard",
-    desc: "<p>You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4+1 force damage to its target. The darts all strike simultaneously, and you can direct them at one or multiple creatures.</p><p>When cast at higher levels, the spell creates one more dart for each slot level above 1st.</p>"
-  },
-  {
-    name: "Shield",
-    level: "1st-level",
-    school: "Abjuration",
-    castTime: "1 reaction",
-    range: "Self",
-    components: "V, S",
-    duration: "1 round",
-    cls: "wizard",
-    desc: "<p>An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.</p>"
-  },
-  {
-    name: "Counterspell",
-    level: "3rd-level",
-    school: "Abjuration",
-    castTime: "1 reaction",
-    range: "60 feet",
-    components: "S",
-    duration: "Instantaneous",
-    cls: "wizard",
-    desc: "<p>You attempt to interrupt a creature in the process of casting a spell. If the creature is casting a spell of 3rd level or lower, its spell fails and has no effect.</p><p>If it is casting a spell of 4th level or higher, make an ability check using your spellcasting ability. The DC equals 10 + the spell's level. On a success, the creature's spell fails.</p>"
-  },
-  {
-    name: "Mage Armor",
-    level: "1st-level",
-    school: "Abjuration",
-    castTime: "1 action",
-    range: "Touch",
-    components: "V, S, M (piece of cured leather)",
-    duration: "8 hours",
-    cls: "wizard",
-    desc: "<p>You touch a willing creature who isn't wearing armor, and a protective magical force surrounds it until the spell ends. The target's base AC becomes 13 + its Dexterity modifier. The spell ends if the target dons armor or if you dismiss the spell as an action.</p>"
-  },
-  {
-    name: "Lightning Bolt",
-    level: "3rd-level",
-    school: "Evocation",
-    castTime: "1 action",
-    range: "Self (100-foot line)",
-    components: "V, S, M (fur and amber rod)",
-    duration: "Instantaneous",
-    cls: "wizard",
-    desc: "<p>A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a DEX saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much on a successful one.</p><p>The lightning ignites flammable objects that aren't being worn or carried.</p>"
   },
 ];
 
@@ -451,11 +290,11 @@ spells.forEach(s => {
   card.className = `card ${s.cls}`;
   card.dataset.cls = s.cls;
   card.innerHTML = `
+    <div class="spell-image"${s.img ? ` style="background-image: url('${s.img}')"` : ''}></div>
     <img class="card-frame" src="${frameMap[s.cls]}" alt="">
     <div class="card-content">
       <div class="card-top">
         <div class="spell-name">${s.name}</div>
-        <div class="spell-image"${s.img ? ` style="background-image: url('${s.img}')"` : ''}></div>
       </div>
       <div class="card-bottom">
         <div class="spell-level-school">${s.level} ${s.school}</div>
