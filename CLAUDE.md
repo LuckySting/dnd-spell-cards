@@ -21,3 +21,11 @@ Printable D&D 5e spell cards — a single-page static HTML app (`spells.html`) w
 - Print layout uses `@media print` to hide UI controls and arrange cards on A4 sheets
 - Font sizes use `clamp()` for responsive scaling between screen and print
 - Class filtering is done client-side by toggling `.hidden` on card elements
+
+## Spell Image Styles
+
+All spell illustrations share a base style: traditional oil painting, gritty textured brushstrokes, aged weathered look, classic fantasy book illustration, painterly and rough — not clean or digital.
+
+- **Paladin**: warm muted color palette of golds, browns and burnt orange, dramatic warm lighting
+- **Warlock**: dark greens, deep purples, sickly yellows and shadow blacks, eerie eldritch lighting
+- **Wizard**: deep blues, silvers, violet purples and arcane whites, cool mystical lighting
