@@ -15,3 +15,4 @@ This project includes a Claude Code skill (`.claude/skills/generate-image/`) for
 ## TODO
 
 - [ ] Change template for warlock and wizard spells
+- [ ] Improve card text readability
